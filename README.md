@@ -23,3 +23,10 @@ Time complexity: O(n2)
 ## Insertion sort
 Sorts the list one item at a time by placing it in its correct position.
 Time: 0.37257320000207983
+Time complexity: O(n2)
+
+## Merge sort
+Splits the array into two parts and use recursion to solve each half.
+Combines to give a final solution.
+Time: 0.04413840000052005
+Time complexity: O(n log2n)

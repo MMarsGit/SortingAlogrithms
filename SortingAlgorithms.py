@@ -71,5 +71,56 @@ def insertion_sort(array):
 
     return array
 
+def _merge_sort(left, right):
+    # return if left is empty
+    if len(left) == 0:
+        return right
+
+    # return if right is empty
+    if len(right) == 0:
+        return left
+
+    result = []
+    # Set the left and right index to origin
+    index_left = index_right = 0
+
+    # Now go through both arrays until all the elements
+    # make it into the resultant array
+    while len(result) < len(left) + len(right):
+        # When the left number is smaller than the right number
+        # add to result array
+        if left[index_left] <= right[index_right]:
+            result.append(left[index_left])
+            index_left += 1
+        else:
+            # When the right number is bigger add to result array
+            result.append(right[index_right])
+            index_right += 1
+
+        # When the end of either array is reached, add the other arrays items to the result array
+        if index_right == len(right):
+            result += left[index_left:]
+            break
+
+        if index_left == len(left):
+            result += right[index_right:]
+            break
+
+    return result
+    
+def merge_sort(array):
+    #If there is one or less items then exit.
+    if len(array) < 2:
+        return array
+
+    midpoint = len(array) // 2
+
+    # Sort the array by recursively splitting the input
+    # into two equal halves, sorting each half and merging them
+    # together into the final result
+    return _merge_sort(
+        left=merge_sort(array[:midpoint]),
+        right=merge_sort(array[midpoint:]))
+
 if __name__ == "__main__":
-    run_sorting_algorithm(algorithm="insertion_sort", array=array)
+    run_sorting_algorithm(algorithm="merge_sort", array=array)
