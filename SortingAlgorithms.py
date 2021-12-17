@@ -48,8 +48,8 @@ def bubble_sort(array):
         # the array is already sorted, and you can terminate
         if already_sorted:
             break
-        
+
     return array
 
 if __name__ == "__main__":
-    run_sorting_algorithm(algorithm="bubble_sort", array=array)
+    run_sorting_algorithm(algorithm="sorted", array=array)
