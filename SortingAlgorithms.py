@@ -1,10 +1,25 @@
 from random import randint
-from timeit import repeat
+import timeit
+import matplotlib.pyplot as plt
+import numpy as np
+import math
 
+#GLOBALS
 ARRAY_LENGTH = 1000
-
 array = [randint(0, 1000) for i in range(ARRAY_LENGTH)]
 
+# VISUALISATIONS
+def plot_graph():
+    #%%
+    plt.rcParams['figure.figsize'] = [10, 6]
+
+    ns = np.linspace(10, 10_000, 50, dtype=int)
+    ts = [timeit.timeit('sum(range({}))'.format(n), number=100)for n in ns]
+
+    plt.plot(ns, ts, 'or')
+    plt.show()
+
+#RUNTIME CALCULATOR
 def run_sorting_algorithm(algorithm, array):
 
     # Code supplied by: https://realpython.com/sorting-algorithms-python/ 
@@ -25,6 +40,7 @@ def run_sorting_algorithm(algorithm, array):
     # minimum time it took to run
     print(f"Algorithm: {algorithm}. Minimum execution time: {min(times)}")
 
+# SORTING ALGORITHMS
 # Compare value with neighbor, if your value is bigger swap positions
 def bubble_sort(array):
 
@@ -107,7 +123,7 @@ def _merge_sort(left, right):
             break
 
     return result
-    
+
 def merge_sort(array):
     #If there is one or less items then exit.
     if len(array) < 2:
@@ -123,4 +139,5 @@ def merge_sort(array):
         right=merge_sort(array[midpoint:]))
 
 if __name__ == "__main__":
-    run_sorting_algorithm(algorithm="merge_sort", array=array)
+    #run_sorting_algorithm(algorithm="merge_sort", array=array)
+    plot_graph()
