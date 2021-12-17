@@ -18,3 +18,4 @@ Time: 0.0012252000014996156
 ### Bubble sort
 This algorithm swaps with its neighbor if the neighbors value is bigger.
 Time: 0.9154005000018515
+Time complexity: O(n2)
