@@ -19,3 +19,7 @@ Time: 0.0012252000014996156
 This algorithm swaps with its neighbor if the neighbors value is bigger.
 Time: 0.9154005000018515
 Time complexity: O(n2)
+
+## Insertion sort
+Sorts the list one item at a time by placing it in its correct position.
+Time: 0.37257320000207983
