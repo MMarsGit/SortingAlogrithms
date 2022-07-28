@@ -1,5 +1,6 @@
 # SortingAlogrithms
 A Variety of sorting alogrithms.
+![](Examples/CodeRunning.png)
 
 ## Technical Details
 
